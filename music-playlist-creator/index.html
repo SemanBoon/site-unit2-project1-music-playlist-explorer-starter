@@ -1,7 +1,6 @@
-cgjtifknenjddrfhfgffurililgehrcv<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Music Playlist Explorer</h1>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,20 +9,253 @@ cgjtifknenjddrfhfgffurililgehrcv<!DOCTYPE html>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <!-- Your header content here -->
+        <div class="Top">Music Playlist Explorer</div>
     </header>
 
     <main>
-        <section class = "playlist-cards"
-        <!-- Your main content here -->
+        <div class = "playlist-cards">
+            <div class = "song-card" onclick="openModal()">
+                <div class = "img-songcard">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class = "song-card">
+                <div class = "img-songcard" onclick="openModal()">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class = "song-card">
+                <div class = "img-songcard" onclick="openModal()">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class = "song-card">
+                <div class = "img-songcard" onclick="openModal()">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class = "song-card">
+                <div class = "img-songcard" onclick="openModal()">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class = "song-card">
+                <div class = "img-songcard" onclick="openModal()">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class = "song-card">
+                <div class = "img-songcard" onclick="openModal()">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class = "song-card">
+                <div class = "img-songcard" onclick="openModal()">
+                    <img src="assets/img/song.png" alt = "Song Cover"/>
+                </div>
+                <div class = "card-content">
+                    <h3>Playlist Title</h3>
+                    <h4>Creator Name</h4>
+                    <p>
+                        <span class = "heart" onclick="IncreaseLikes(event)"> ♡ </span>
+                        <span class = "likesCount">2</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </main>
+
+    <div id="my-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class = "modal-body">
+                <div class = "playlist-tile">
+                    <div class = "playlist-cover">
+                        <img src="assets/img/song.png" alt = "Playlist Cover"/>
+                    </div>
+                    <div class = "playlist-info">
+                        <h5>Playlist Title</h5>
+                        <p>Creator Name</p>
+                    </div>
+                </div>
+
+                <div class = "song-list">
+                    <div class = "song-tile">
+                        <div class = "image-tile">
+                            <div class="song-left">
+                                <img src="assets/img/song.png" alt = "Song Cover"/>
+                                <div class = "tile-content">
+                                    <h3>Song Title</h3>
+                                    <p>Artist Name</p>
+                                    <p>Album Name</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="song-duration">0:00</div>
+                    </div>
+
+                    <div class = "song-tile">
+                        <div class = "image-tile">
+                            <div class="song-left">
+                                <img src="assets/img/song.png" alt = "Song Cover"/>
+                                <div class = "tile-content">
+                                    <h3>Song Title</h3>
+                                    <p>Artist Name</p>
+                                    <p>Album Name</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="song-duration">0:00</div>
+                    </div>
+
+
+                    <div class = "song-tile">
+                        <div class = "image-tile">
+                            <div class="song-left">
+                                <img src="assets/img/song.png" alt = "Song Cover"/>
+                                <div class = "tile-content">
+                                    <h3>Song Title</h3>
+                                    <p>Artist Name</p>
+                                    <p>Album Name</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="song-duration">0:00</div>
+                    </div>
+
+                    <div class = "song-tile">
+                        <div class = "image-tile">
+                            <div class="song-left">
+                                <img src="assets/img/song.png" alt = "Song Cover"/>
+                                <div class = "tile-content">
+                                    <h3>Song Title</h3>
+                                    <p>Artist Name</p>
+                                    <p>Album Name</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="song-duration">0:00</div>
+                    </div>
+
+
+                    <div class = "song-tile">
+                        <div class = "image-tile">
+                            <div class="song-left">
+                                <img src="assets/img/song.png" alt = "Song Cover"/>
+                                <div class = "tile-content">
+                                    <h3>Song Title</h3>
+                                    <p>Artist Name</p>
+                                    <p>Album Name</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="song-duration">0:00</div>
+                    </div>
+
+
+                    <div class = "song-tile">
+                        <div class = "image-tile">
+                            <div class="song-left">
+                                <img src="assets/img/song.png" alt = "Song Cover"/>
+                                <div class = "tile-content">
+                                    <h3>Song Title</h3>
+                                    <p>Artist Name</p>
+                                    <p>Album Name</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class ="song-duration">0:00</div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
 
     <footer>
         <!-- Your footer content here -->
     </footer>
+
     <script src="data/data.js"></script>
     <script src="script.js"></script>
 </body>
+
+
 </html>
