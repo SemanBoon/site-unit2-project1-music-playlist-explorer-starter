@@ -73,7 +73,7 @@ Deployed Application (optional): [Globetrotter Deployed Site](ADD_LINK_HERE)
 Add your response here
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
-If I had more time, I would have tried to do all the stretch features and I would have taken more time to understand every single concept that I applied
+If I had more time, I would try to complete my project alot sooner and I would have tried to do all the stretch features and I would have taken more time to understand every single concept that I applied
   
 Add your response here
 
