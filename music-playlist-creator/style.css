@@ -85,10 +85,28 @@ header{
 }
 
 .card-content .heart{
-    color: black;
+    /* color: black; */
     font-size: small;
     cursor: pointer;
 }
+
+.card-content .heart .hover{
+    color:red;
+}
+
+.heart:not(.liked){
+    font-size: small;
+    cursor: pointer;
+}
+
+heart.liked{
+   color: red;
+}
+
+.heart.hover {
+    color:red
+}
+
 .card-content .like-count{
     font-size: small;
 }
