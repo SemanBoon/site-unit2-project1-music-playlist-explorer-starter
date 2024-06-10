@@ -6,15 +6,23 @@ body{
 
 header .Top{
     background-color: rgb(206, 186, 181);
-    color: gray;
+    color: dark gray;
     text-align: center;
     padding-top: 20px;
-    /* font-size: 50px; */
     font-size: 2.0rem;
 }
 
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: inherit;
+}
+a:hover {
+    color: blue;
+}
+
 header{
-    /* margin: 10px; */
     padding: 10px;
     text-align: center;
     background-color: rgb(207, 188, 188);
@@ -34,7 +42,7 @@ header{
 .song-card{
     height: 50%;
     width: 200px;
-    border: 2px solid black;
+    border: 2px solid rgb(159, 145, 145);
     display: grid;
     padding: 5px;
     margin: 10px;
@@ -45,8 +53,9 @@ header{
     overflow: hidden;
 }
 
-.song-card.hover{
+.song-card:hover{
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: scale(1.1);
 }
 
 .img-songcard {
@@ -84,32 +93,29 @@ header{
     color: black;
 }
 
-.card-content .heart{
-    /* color: black; */
-    font-size: small;
+.heart-button{
+    align-items: center;
+    color: #555555;
     cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
 }
 
-.card-content .heart .hover{
-    color:red;
+.heart-button:hover {
+    color: rgb(241, 185, 185);
 }
 
-.heart:not(.liked){
-    font-size: small;
-    cursor: pointer;
+.likesCount{
+    align-items: center;
+    margin-top: 2px;
+    padding: 3px;
 }
 
-heart.liked{
-   color: red;
-}
-
-.heart.hover {
-    color:red
-}
-
-.card-content .like-count{
-    font-size: small;
-}
+/* .card-rating-selected > .heart-button,
+.card-rating-selected > .likesCount{
+    color: rgb(193, 158, 158)
+} */
 
 .modal-overlay {
     display: none;
@@ -124,7 +130,7 @@ heart.liked{
 }
 
 .modal-content {
-    background-color: white;
+    background-color: rgb(238, 228, 228);
     padding: 30px;
     border: 1px solid #0e0b0b;
     width: 50%;
@@ -237,6 +243,39 @@ heart.liked{
     color: dark gray;
 }
 
+.shuffle-button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: gray;
+    font-size: 1.5rem;
+    margin: 10px 0px;
+}
+
+.shuffle-button:hover{
+    color: rgb(189, 158, 158)
+}
+
 body.modal-open{
     overflow: hidden;
+}
+
+footer{
+    font-family: 'Arial', sans-serif;
+    margin-top: 100px;
+    padding: 0;
+}
+
+.container{
+    background-color: rgb(206, 186, 181);
+    color: dark gray;
+    text-align: right;
+    padding-top: 10px;
+    font-size: 1.0rem;
+}
+
+.container p{
+    margin: 0px;
+    padding: 5px;
+    color: black;
 }
