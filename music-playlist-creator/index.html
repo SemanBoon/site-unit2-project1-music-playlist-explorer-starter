@@ -3,34 +3,50 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <title>Music Playlist Explorer</title>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-
         <link rel="stylesheet" href="style.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
     <body>
         <header>
-            <div class="Top">Music Playlist Explorer</div>
+            <div class="Top">
+                <a href = "featured.html">Music Playlist Explorer</a>
+            </div>
         </header>
 
         <main>
             <div class="playlist-cards"></div>
-
         </main>
 
         <div id="my-modal" class="modal-overlay">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <div class="playlist-title"></div>
-                <div class="song-list"></div>
+                    <div class="playlist-tile">
+                        <div class="playlist-cover">
+                            <img src="assets/img/song.png" alt="Playlist Cover" />
+                        </div>
+                        <div class="playlist-info">
+                            <h5 class="playlist-title"></h5>
+                            <p class="playlist-creator"></p>
+                        </div>
+                    </div>
+
+                    <button class = " shuffle-button">
+                        <span class = "shuffle-icons">shuffle</span>
+                    </button>
+                    <div class="song-list"></div>
             </div>
         </div>
 
         <footer>
-            <!-- Your footer content here -->
+            <div class="container">
+              <p>&copy; 2023 My Music App</p>
+              <p>Created by Chi♡</p>
+            </div>
         </footer>
+
         <script src="data/data.js"></script>
         <script src="script.js"></script>
     </body>
