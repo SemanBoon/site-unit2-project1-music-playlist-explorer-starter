@@ -1,8 +1,8 @@
 ## Unit 1 Assignment: Globetrotter
 
-Submitted by: Adesewa Benson (I'm really sorry I had a medical emegency so I'm not able to  submit a complete project before the deadline but I will update this submission the moment I get done tomorrow) Thank you!
+Submitted by: Adesewa Benson (Updated!!)
 
-Estimated time spent: 40 hours spent in total
+Estimated time spent: 60 hours spent in total
 
 Deployed Application (optional): [Globetrotter Deployed Site](ADD_LINK_HERE)
 
@@ -10,11 +10,11 @@ Deployed Application (optional): [Globetrotter Deployed Site](ADD_LINK_HERE)
 
 #### CORE FEATURES
 
-- [ ] **Home Page**
-  - [ ] A heading that captures the essence of the destination.
-  - [ ] An introductory paragraph that welcomes visitors and sets the context for the site.
-  - [ ] An evocative image that represents the location.
-  - [ ] Content organized using Flexbox for a fluid layout.
+- [X] **Home Page**
+  - [X] A heading that captures the essence of the destination.
+  - [X] An introductory paragraph that welcomes visitors and sets the context for the site.
+  - [X] An evocative image that represents the location.
+  - [X] Content organized using Flexbox for a fluid layout.
 
 - [X] **Top Attractions Page**
   - [X] A minimum of three attractions, each with a name, a photo, and a brief description.
@@ -27,7 +27,7 @@ Deployed Application (optional): [Globetrotter Deployed Site](ADD_LINK_HERE)
 
 - [ ] **Photo Gallery**
   - [ ] At least five images with captions that convey the local atmosphere or highlights.
-  - [ ] A gallery presented in a responsive design.
+  - [X] A gallery presented in a responsive design.
 
 - [ ] **Navigation Bar**
   - [ ] Links to each main page of the site (Home, Top Attractions, Photo Gallery, and the chosen Guide section).
@@ -61,14 +61,17 @@ Deployed Application (optional): [Globetrotter Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
+`TODO://` Add the embedded URL code to your animated app walkthrough below, 
+
+https://www.loom.com/share/7d986800e72b4d12b178ea2a63d77d5e?sid=5742c41d-0253-426f-946d-5f1a563d07e5
+Make sure the video actually renders and is playable when viewing this README. 
 
 `ADD_EMBEDDED_CODE_HERE`
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
-  I found it hard to populate using the TSON file.
+  I found it hard to populate using the JSON file.
 
 Add your response here
 
@@ -77,7 +80,7 @@ If I had more time, I would try to complete my project alot sooner and I would h
   
 Add your response here
 
-* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+* Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time? The only thing that really went well was the CSS because it didn't really give me trouble and it's super easy to pick up. Submitting my project after the deadline was definately not the plan. 
 
 Add your response here
 
@@ -85,7 +88,10 @@ Add your response here
 
 - Add any links to open-source libraries used in your project.
 
+- https://fonts.google.com/icons
+
 ### Shout out
 I'm going to give a shoutout to  my manager keerthana, and peer advisors Jason and Bo
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shoutout to Maya!
