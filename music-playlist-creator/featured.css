@@ -12,7 +12,6 @@ header {
     height: 70px;
 }
 
-
 .featured-container {
   display: flex;
   margin: 20px;
@@ -34,7 +33,7 @@ header {
 }
 
 .playlist-info {
-  text-align: center;
+  text-align: auto;
 }
 
 .playlist-title {
