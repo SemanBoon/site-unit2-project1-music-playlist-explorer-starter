@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Feature Page</title>
+
+        <link rel="stylesheet" type="text/css" href="featured.css" />
+
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    </head>
+
+    <body>
+        <header>
+            <h2>MyMusic</h2>
+        </header>
+        <main>
+            <div class="featured-container">
+                <div class="playlist-details">
+                    <div class="playlist-cover">
+                        <img src="assets/img/song.png" alt="Playlist Cover" class="cover-image" />
+                    </div>
+                    <div class="playlist-info">
+                        <h2 class="playlist-title"></h2>
+                        <p class="playlist-creator"></p>
+                    </div>
+                </div>
+                <div class="song-list"></div>
+            </div>
+
+            <div class="button-container">
+                <button onclick="window.location.href='index.html'">
+                    View All Playlists
+                </button>
+            </div>
+        </main>
+
+        <script src="data/data.js"></script>
+        <script src="featured.js"></script>
+
+
+    </body>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 My Music App</p>
+            <p>Created by Chi♡</p>
+        </div>
+    </footer>
+
+</html>
