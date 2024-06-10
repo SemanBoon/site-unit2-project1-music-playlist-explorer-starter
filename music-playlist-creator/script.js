@@ -1,161 +1,152 @@
-function openModal() {
-  document.getElementById('my-modal').style.display = "block";
-  document.body.classList.add('modal-open');
+document.addEventListener("DOMContentLoaded", function () {
+  loadPlaylists();
+});
+
+function loadPlaylists() {
+  const playlistContainer = document.querySelector(".playlist-cards");
+  let playlists = data.playlists;
+
+  playlists.forEach((playlist) => {
+    // Creating a div for the song card
+    let playlistCard = document.createElement("div");
+    playlistCard.className = "song-card";
+    playlistCard.onclick = () => openModal(playlist.playlistID);
+
+    // Creating a div for the playlist cover
+    let playlistCover = document.createElement("div");
+    playlistCover.className = "img-songcard";
+
+    // Creating an image to put in the playlist cover
+    let playlistCoverImg = document.createElement("img");
+    playlistCoverImg.src = playlist.playlist_art;
+    playlistCoverImg.alt = "Song Cover";
+
+    // Add the image to the cover then add the cover to the card
+    playlistCover.appendChild(playlistCoverImg);
+    playlistCard.appendChild(playlistCover);
+
+    // Create the div for the card info
+    let playlistInfo = document.createElement("div");
+    playlistInfo.className = "card-content";
+
+    // Create a header element for card for the playlist title
+    let playlistTitle = document.createElement("h3");
+    playlistTitle.textContent = playlist.playlist_name;
+
+    // Create a paragraph element to add the creator
+    let playlistCreator = document.createElement("p");
+    playlistCreator.textContent = playlist.playlist_creator;
+
+    // Create the like button and adding counting function
+    let heartButton = document.createElement("button");
+    heartButton.className = "heart-button";
+    heartButton.innerHTML = "&hearts;";
+    heartButton.addEventListener("click", function (event) {
+      event.stopPropagation();
+      let likesCountElement = heartButton.nextElementSibling;
+      let likesCount = parseInt(likesCountElement.textContent);
+      likesCount++;
+      likesCountElement.textContent = likesCount.toString();
+    });
+
+    // Create the likes count element
+    let likesCount = document.createElement("span");
+    likesCount.className = "likesCount";
+    likesCount.textContent = playlist.likeCount.toString();
+
+    // Add the creator, title, like button, and like count to the playlist info div
+    playlistInfo.appendChild(playlistTitle);
+    playlistInfo.appendChild(playlistCreator);
+    playlistInfo.appendChild(heartButton);
+    playlistInfo.appendChild(likesCount);
+
+    // Add the info div to the card div
+    playlistCard.appendChild(playlistInfo);
+
+    // Add the playlist card to the page
+    playlistContainer.appendChild(playlistCard);
+  });
+}
+
+function openModal(playlistID) {
+  const modal = document.getElementById("my-modal");
+  const modalContent = modal.querySelector(".modal-content");
+  const playlist = data.playlists.find((p) => p.playlistID === playlistID);
+
+  modalContent.innerHTML = `
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-bogy">
+        <div class="playlist-tile">
+          <div class="playlist-cover">
+            <img src="${playlist.playlist_art}" alt="Playlist Cover"/>
+          </div>
+          <div class="playlist-info">
+            <h5>${playlist.playlist_name}</h5>
+            <p>${playlist.playlist_creator}</p>
+          </div>
+        </div>
+        <button class "shuffle-button" onclick = "shuffleSongs(${playlistID})">
+          <span class = "shuffle-icon">shuffle</span>
+        </button>
+        <div class="song-list">
+          ${playlist.songs.map((song) => `
+            <div class="song-tile">
+              <div class="image-tile">
+                <img src="${song.cover_art}" alt="Song Cover"/>
+              </div>
+              <div class="tile-content">
+                <h3>${song.title}</h3>
+                <p>${song.artist}</p>
+                <p>${song.album}</p>
+              </div>
+              <div class="song-duration">${song.duration}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+ `;
+  modal.style.display = "block";
+  document.body.classList.add("modal-open");
 }
 
 function closeModal() {
-  document.getElementById('my-modal').style.display = "none";
-  document.body.classList.remove('modal-open');
+  const modal = document.getElementById("my-modal");
+  modal.style.display = "none";
+  document.body.classList.remove("modal-open");
 }
 
-
-window.addEventListener('click', function(event) {
-    if (event.target == document.getElementById('my-modal')) {
-        document.getElementById('my-modal').style.display = "none";
-    }
+window.addEventListener("click", function (event) {
+  if (event.target == document.getElementById("my-modal")) {
+    closeModal();
+  }
 });
 
-function IncreaseLikes(event) {
-    event.stopPropagation();
-    var likesCountElement = event.target.nextElementSibling;
-    var likesCount = parseInt(likesCountElement.textContent);
+
+
+function shuffleSongs(playlistID) {
+  const playlist = data.playlists.find((p) => p.playlistID === playlistID);
+  playlist.songs = shuffleArray(playlist.songs);
+
+  const songList = document.querySelector(".song-list");
+  songList.innerHTML = playlist.songs.map(song => `
+      <div class="song-tile">
+          <div class="image-tile">
+              <img src="${song.cover_art}" alt="Song Cover"/>
+          </div>
+          <div class="tile-content">
+              <h3>${song.title}</h3>
+              <p>${song.artist} - ${song.album}</p>
+          </div>
+          <div class="song-duration">${song.duration}</div>
+      </div>
+  `).join('');
 }
 
-let playlists = data.playlists;
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
-playlists.forEach(playlist => {
-// creaying a div for the song card
-  let playlistCard = document.createElement("div");
-  playlistCard.className = "song-card";
-
-// creating a div for the playlist cover
-  let playlistCover = document.createElement("div");
-  playlistCover.className = "img-songcard";
-
-// creating an image to put in the playlist cover
-  let playlistCoverImg = document.createElement("img");
-  playlistCoverImg.src = playlist.playlist_art;
-
-// add the image to the cover then add the cover to the card
-  playlistCover.appendChild(playlistCoverImg);
-  playlistCard.appendChild(playlistCover);
-
-  // create the div for the card info
-  let playlistInfo = document.createElement("div");
-  playlistInfo.className = "card-content";
-
-  // create a header element for card for the playlist title
-  let playlistTitle = document.createElement("h3");
-  playlistTitle.textContent = playlist.playlist_name;
-
-  //  create a paragraph element to add the creator
-  let playlistCreator = document.createElement("p");
-  playlistCreator.textContent = playlist.playlist_creator;
-
-  // add the creator and the title to the playlistinfo div then add that to the playlist div
-  playlistInfo.appendChild(playlistTitle);
-  playlistInfo.appendChild(playlistCreator);
-  playlistCard.appendChild(playlistInfo);
-
-
-  // Add the playlist card to the page
-  document.querySelector(".playlist-cards").appendChild(playlistCard);
-
-});
-
-let modal = document.createElement("div");
-modal.id = "my-modal"
-modal.className = "modal-overlay"
-
-// Loop through each playlist
-playlists.forEach(playlist => {
-  // Create a div for the new modal content element
-  let modalContent = document.createElement("div");
-  modalContent.className = "modal-content";
-
-// create a div for playlist tile
-  let playlistTile = document.createElement("div");
-  playlistTile.className = "playlist-tile";
-
-  // creating a div for the playlist cover
-  let playlistImage = document.createElement("div");
-  playlistImage.className = "playlist-cover";
-
-// creating an image to put in the playlist cover
-  let playlistImageCover = document.createElement("img");
-  playlistImageCover.src = playlist.playlist_art;
-
-  playlistImage.appendChild(playlistImageCover);
-  playlistTile.appendChild(playlistImage);
-
-  let playlistInfo = document.createElement("div");
-  playlistInfo.className = "playlist-info";
-
-  // create the playlist title and creator element
-  let playlistTitle = document.createElement("h5");
-  playlistTitle.textContent = playlist.playlist_name;
-  let playlistCreator = document.createElement("p");
-  playlistCreator.textContent = playlist.playlist_creator;
-
-// add the title and creator to modal content
-  playlistInfo.appendChild(playlistTitle);
-  playlistInfo.appendChild(playlistCreator);
-
-  playlistTile.appendChild(playlistInfo)
-
-  // create the song list div
-  let songList = document.createElement("div");
-  songList.className = "song-list";
-
-  playlist.songs.forEach(song => {
-    let songTile = document.createElement("div");
-    songTile.className = "song-tile";
-
-    // create the song cover art
-    let songCover = document.createElement("div");
-    songCover.className = "image-tile";
-
-    let songCoverImg = document.createElement("img");
-    songCoverImg.src = song.cover_art;
-
-    // add the song cover art
-    songCover.appendChild(songCoverImg);
-    songTile.appendChild(songCover)
-
-  // create the song title, artist, and duration element
-    let songInfo = document.createElement("div");
-    songInfo.className = "tile-content";
-
-    // create the song title, artist, and duration element
-    let songTitle = document.createElement("h3");
-    songTitle.textContent = song.title;
-    let songArtist = document.createElement("p");
-    songArtist.textContent = song.artist;
-    let albumName = document.createElement("p");
-    albumName.textContent = song.album;
-
-    let songDuration = document.createElement("div");
-    songDuration.className = "song-duration"
-    songDuration.textContent = song.duration;
-
-    // add the song title, artist, and duration element to song info then add song info to song info
-    songInfo.appendChild(songTitle);
-    songInfo.appendChild(songArtist);
-    songInfo.appendChild(albumName);
-
-    // append songInfo to songTile
-    songTile.appendChild(songInfo);
-    songTile.appendChild(songDuration);
-
-    songList.appendChild(songTile);
-
-    // add plalist tile and song tile to modal content
-    modalContent.appendChild(playlistTile);
-    modalContent.appendChild(songList);
-
-  });
-
-  modal.appendChild(modalContent);
-  document.querySelector(".playlist-cards").appendChild(modal);
-
-});
